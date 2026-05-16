@@ -1,6 +1,6 @@
 ---
 name: setup-agent-skills
-description: Initializes the repository for AI agents. Creates the shared context, configuration files (AGENTS.md), and triage state machine required for autonomous workflows.
+description: Initializes the repository for AI agents. Creates the shared context, configuration files (AGENTS.md), and triage state machine required for autonomous workflows using standardized templates.
 disable-model-invocation: true
 ---
 
@@ -38,15 +38,15 @@ Summarize the finalized settings based on the user's input. Ask for a final "yes
 
 **Note:** If the user is using `AGENTS.md` but is on a tool like Claude Code, suggest creating a symlink to `CLAUDE.md` to ensure cross-vendor compatibility.
 
-## Step 4: Generation
-Once confirmed, perform the following actions without removing existing user data:
+## Step 4: Template-Driven Generation
+Once confirmed, perform the following actions. **Do NOT hallucinate the structure of the configuration files.** You must use the template files provided in this skill's `assets/` directory as your foundation.
 
-### 1. Generate Configs in `docs/agents/`
-Create or update the following instructional markdown files:
-* `docs/agents/issue-tracker.md`: Documentation on how the agent should interact with the chosen tracker.
-* `docs/agents/triage-labels.md`: The definitive mapping of the 5 triage states.
-* `docs/agents/domain.md`: Links to the project's Architecture Decision Records (ADRs) and glossaries.
-* `docs/agents/ci-commands.md`: The mandatory testing and linting requirements.
+### 1. Read Templates & Generate Configs in `docs/agents/`
+Read the following template files from `.github/skills/setup-agent-skills/assets/` (or the relative path where this skill is stored). Inject the user's confirmed answers into the templates, then save the populated files to the project's `docs/agents/` directory:
+* Read `assets/issue-tracker-template.md` -> Write to `docs/agents/issue-tracker.md`
+* Read `assets/triage-labels-template.md` -> Write to `docs/agents/triage-labels.md`
+* Read `assets/domain-template.md` -> Write to `docs/agents/domain.md`
+* Read `assets/ci-commands-template.md` -> Write to `docs/agents/ci-commands.md`
 
 ### 2. Update Root Agent Context
 Identify the root file (`AGENTS.md` or `CLAUDE.md`). Append or update the following block:
