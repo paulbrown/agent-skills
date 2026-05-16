@@ -27,6 +27,7 @@ Before we begin, silently explore the repository to understand the existing docu
 * **Cross-reference with code:** Check whether the code agrees with how I say something works. Surface any contradictions immediately.
 
 ## Managing Documentation (Anti-Context Rot)
+Use the format defined in `assets/CONTEXT-FORMAT.md` when updating `CONTEXT.md`. Use the format defined in `assets/ADR-FORMAT.md` when creating an ADR.
 * **Update CONTEXT.md inline:** When a term is resolved, update `CONTEXT.md` right there. Capture them as they happen. `CONTEXT.md` should be totally devoid of implementation details; it is a glossary and nothing else.
 * **Offer ADRs sparingly:** **ONLY** write an Architecture Decision Record (ADR) to `docs/adr/` if the decision meets ALL THREE criteria:
     1. *Hard to reverse* (the cost of changing your mind later is meaningful).
