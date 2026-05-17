@@ -14,7 +14,7 @@ You will execute an interactive setup wizard. **Do not write or modify any files
 Before starting the interview, silently analyze the repository to gather default answers:
 1. Identify the root configuration file: Does `AGENTS.md` or `CLAUDE.md` already exist?
 2. Detect the environment: Scan `.git/config` for the remote provider (GitHub, GitLab, local, etc.).
-3. **Extract CI/CD Commands:** Look for `package.json` (check the "scripts" block), `Makefile`, `tox.ini`, or similar build files. Identify the exact terminal commands used for testing (e.g., `npm run test`, `make test`) and formatting/linting (e.g., `npm run lint`, `make format`). 
+3. **Extract CI/CD Commands:** Look for common build files such as `package.json`, `Makefile`, `tox.ini`, `pyproject.toml`, `Cargo.toml`, `go.mod`, `composer.json`, or `Gemfile`. Also check for common test and format tool configs such as Jest, Vitest, Playwright, pytest, ESLint, Prettier, Ruff, Biome, or Black. Identify the exact test command and formatting/lint command when possible. If scripts are missing but tools are clearly present, infer the most likely commands to propose during the interview.
 
 ## Step 2: The Interview
 Present the user with a summary of your findings and ask them to confirm or define the **Five Core Pillars**. Present this as a clean, numbered list and **wait for their reply**.
@@ -27,8 +27,8 @@ Present the user with a summary of your findings and ask them to confirm or defi
     * `ready-for-human`: Requires a human developer (too complex/sensitive).
     * `wontfix`: Closed/Discarded.
 3. **Domain Docs:** Is this a single-context project (one glossary) or a multi-context monorepo (using a `CONTEXT-MAP.md`)?
-4. **Testing Command:** *[If you found a test command in Step 1, present it for confirmation. If not, ask:]* What is the exact terminal command an agent must run to execute the test suite?
-5. **Formatting Command:** *[If you found a format/lint command in Step 1, present it for confirmation. If not, ask:]* What is the exact terminal command an agent must run before pushing code to ensure it passes CI?
+4. **Testing Command:** Use your Step 1 findings. If you found a likely test command, present it for confirmation. If not, ask for a one-line project description (language/runtime, framework, and app or extension type), suggest the most likely test command, and ask the user to confirm or correct it.
+5. **Formatting Command:** Use your Step 1 findings. If you found a likely format or lint command, present it for confirmation. If not, reuse the same project description, suggest the most likely format or lint command, and ask the user to confirm or correct it.
 
 *Pause and wait for the user to answer. Do not proceed to Step 3 until they reply.*
 
