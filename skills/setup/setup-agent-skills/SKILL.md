@@ -41,7 +41,7 @@ Summarize the finalized settings based on the user's input. Ask for a final "yes
 Once confirmed, perform the following actions. **Do NOT hallucinate the structure of the configuration files.** You must use the template files provided in this skill's `assets/` directory as your foundation.
 
 ### 1. Read Templates & Generate Configs in `docs/agents/`
-Read the following template files from `.github/skills/setup-agent-skills/assets/` (or the relative path where this skill is stored). Inject the user's confirmed answers into the templates, then save the populated files to the project's `docs/agents/` directory:
+Read the following template files from `skills/setup/setup-agent-skills/assets/` (or the relative path where this skill is stored). Inject the user's confirmed answers into the templates, then save the populated files to the project's `docs/agents/` directory:
 
 * Read `assets/issue-tracker-<provider>-template.md` (Select the template matching their chosen provider from Step 2, e.g., `github`, `linear`, `jira`, `local`) -> Write to `docs/agents/issue-tracker.md`
 * Read `assets/triage-labels-template.md` -> Write to `docs/agents/triage-labels.md`
