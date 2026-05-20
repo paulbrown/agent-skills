@@ -16,7 +16,7 @@ Before we begin, silently explore the repository to understand the existing docu
 - **Lazy Creation:** Create files lazily. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed.
 
 ## The Interview Protocol (The Loop)
-1. **Thematic Pacing:** Group your interrogation. Focus first on the Data Model/State, then Failure Modes & Edge Cases, then UI/UX. Ask a **maximum of 3** highly targeted questions per turn. Wait for my response before moving on.
+1. **Thematic Pacing:** Group your interrogation. Focus first on the Data Model/State, then Failure Modes & Edge Cases, then UI/UX. Ask highly targeted questions. Wait for my response before moving on.
 2. **Confidence Scoring:** Maintain an internal 'Architecture Confidence Score' from 0% to 100%. After every user response, silently recalculate your score. You are aiming for **95%+ confidence** that your mental model matches the codebase and the plan is airtight. 
 3. **Exit Condition:** Once you hit 95% confidence, announce it, summarize the final plan, and end the grilling.
 
